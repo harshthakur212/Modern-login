@@ -12,7 +12,9 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: rgb(108, 221, 238);
+    background: url('Screenshot\ \(435\).png');
+
+    /* background-color: rgb(108, 221, 238); */
     background-size: cover;
     background-position: center;
 }
@@ -92,11 +94,11 @@ header {
     width: 440px;
     height: 540px;
     /* background: transparent; */
-    background: linear-gradient(to right bottom, rgba(255, 255, 255, 100), rgba(255, 255, 255, 0.3));
+    /* background: linear-gradient(rgba(255, 255, 255, 100)); */
 
     border: 2px solid rgba(255, 255, 255, .5);
     border-radius: 20px;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(100px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -687,7 +689,6 @@ input.search-box {
     color: #2596be;
 }
 
-
-/* .submitButton {
+.submitButton {
     cursor: default;
-} */
+}

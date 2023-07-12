@@ -524,9 +524,26 @@ otpFields.forEach(field => {
             loginButton.style.cursor = 'not-allowed';
         } else {
             loginButton.disabled = true;
-            loginButton.style.backgroundColor = '#2596be';
+            loginButton.style.backgroundColor = '#7fe4fb';
 
             loginButton.style.cursor = 'pointer';
         }
     });
+});
+
+
+const mobileNumberInput = document.getElementById('mobileNumberInput');
+const submitButton = document.getElementById('btn');
+
+mobileNumberInput.addEventListener('input', function () {
+    const inputValue = mobileNumberInput.value;
+
+    if (inputValue.length === 10) {
+        submitButton.disabled = false;
+        submitButton.style.cursor = 'not-allowed';
+    } else {
+        submitButton.disabled = true;
+        submitButton.style.backgroundColor = '#7fe4fb';
+        submitButton.style.cursor = 'pointer';
+    }
 });
