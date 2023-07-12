@@ -6,18 +6,59 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Website with login & register</title>
+    <script>
+
+
+        function moveToNext(currentInput) {
+            if (currentInput.value.length >= currentInput.maxLength) {
+                const nextInput = currentInput.nextElementSibling;
+                if (nextInput && nextInput.tagName === 'INPUT') {
+                    nextInput.focus();
+                }
+            }
+        }
+
+
+
+
+
+
+
+
+    </script>
+
+    <style>
+        /* CSS for positioning the elements */
+        .changeNumber {
+            display: flex;
+            align-items: center;
+        }
+
+        .myParagraph {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+    </style>
 </head>
 
 <body>
 
     <header>
-        <h2 class="logo"> Logo</h2>
         <nav class="nav">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="#">Contact</a>
             <button class="btnlogin-popup">Login</button>
         </nav>
     </header>
@@ -27,23 +68,119 @@
             <ion-icon name="close"></ion-icon>
         </span>
         <div class="form-box login">
-            <h2>Login</h2>
+            <div class="bannerWrapper">
+                <img class="gifImg" src="/gift-3-512.png" alt="">
+                <div class="bannerText">
+                    <h2>Get Assured Gift on your 1 <sup>st</sup> Order</h2>
+                </div>
+            </div>
+            <div class="assuredGift">
+            </div>
             <form action="#">
                 <div class="input-box">
-                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
-                    <input type="email" required>
-                    <label>Email</label>
+                    <!-- <span class="icon"><ion-icon name="mail"></ion-icon></span> -->
+                    <!-- <span class="icon"><ion-icon name="mail"></ion-icon></span> -->
+                    <!-- <input type="tel" required placeholder="Enter Mobile Number">
+                    <label class="form-check-label" for="flexCheckDefault"> -->
+                    <!-- <input type="checkbox" id="flexCheckDefault" name>
+                        I have read and do hereby agree to the <span style="color: var(--clorev-primary);"><a
+                                href="#">Terms of Use</a></span>
+                        and <span style="color: var(--clorev-primary);"><a href="#">Privacy Policy</a></span> of
+                        CLOREV
+                    </label> -->
+                    <div class="select-box">
+                        <div class="selected-option">
+                            <div>
+                                <span class="iconify" data-icon="flag:gb-4x3"></span>
+                                <strong>+91</strong>
+                            </div>
+                            <input type="tel" name="tel" placeholder="Phone Number">
+                        </div>
+                        <div class="options">
+                            <input type="text" class="search-box" placeholder="Search Country Name">
+                            <ol>
+
+                            </ol>
+                        </div>
+                    </div>
+
+                    <!-- <label>Email</label> -->
                 </div>
-                <div class="input-box">
+                <div class="checkbox-container">
+                    <p id="paragraph1">
+                        <label for="myCheckbox" class="checkbox-label">By requesting OTP, you agree to the <span
+                                style="color: var(--clorev-primary);"><a href="#">Terms of Use</a></span> and <span
+                                style="color: var(--clorev-primary);"><a href="#">Privacy Policy</a></span> of
+                            CLOREV Laundry</label>
+                </div>
+
+
+                <div class="changeNumber">
+                    <p class="p" id="myParagraph">Change Mobile Number</p>
+                    <button onclick="replaceWithCountdown(); toggleText(); toggleText2();disableButton()" type="submit"
+                        id="timerStart" class="btn">Request
+                        OTP</button>
+                </div>
+                <div class="enterOtp">
+                    <!-- <span class="icon"><ion-icon name="lock-closed"></ion-icon></span> -->
+                    <!-- <input class="enterOtp-input" type="password" required placeholder="Enter OTP">
+                    <label></label> -->
+                    <div class="C">
+                        <input class="otp-input" type="text" maxlength="1" pattern="[0-9]" oninput="moveToNext(this)"
+                            oninput="checkOtpFields()" />
+                        <input class="otp-input" type="text" maxlength="1" pattern="[0-9]" oninput="moveToNext(this)"
+                            oninput="checkOtpFields()" />
+                        <input class="otp-input" type="text" maxlength="1" pattern="[0-9]" oninput="moveToNext(this)"
+                            oninput="checkOtpFields()" />
+                        <input class="otp-input" type="text" maxlength="1" pattern="[0-9]" oninput="moveToNext(this)"
+                            oninput="checkOtpFields()" />
+                        <button type="submit" id="submit-btn" class="btn-login submitButton">Login</button>
+
+                    </div>
+
+                </div>
+                <div class="text-container">
+                    <span class="signInAs">OR Sign In as</span>
+                </div>
+
+                <div class="vertical-line-container">
+                    <!-- <h4>Service Provider</h4>
+                    <span class="icon"><i class="fa-solid fa-arrow-right"></i></span>
+                    <span class="icon"></span>
+                    <h4>Delivery Partner</h4>
+                    <span class="icon"><i class="fa-solid fa-arrow-right"></i></span> -->
+
+                    <div class="span1">
+                        <a class="anchor" href="">
+                            <div>Service Proivder</div>
+                        </a>
+                        <div class="icon1"><i class="fa-solid fa-caret-right"></i></div>
+                    </div>
+
+                    <!-- <span class="icon"><i class="fa-solid fa-arrow-right"></i></span> -->
+                    <div class="span2">
+                        <a class="anchor" href="">
+                            <div>Delivery Partner</div>
+                        </a>
+                        <div class="icon2"><i class="fa-solid fa-caret-right"></i></div>
+                    </div>
+
+                    <!-- <span class="icon"><i class="fa-solid fa-arrow-right"></i></span> -->
+
+
+                </div>
+
+
+                <!-- <div class="input-box">
                     <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
                     <input type="password" required>
                     <label>Password</label>
-                </div>
-                <div class="remember-forgot">
+                </div> -->
+                <!-- <div class="remember-forgot">
                     <label><input type="checkbox">Remember me </label>
                     <a href="#">Forgot Password</a>
-                </div>
-                <button type="submit" class="btn">Login</button>
+                </div> -->
+                <!-- <button type="submit" class="btn">Login</button> -->
                 <div class="login-register">
                     <p>Don't have an account ? <a class="register-link" href="#">Register</a></p>
                 </div>
@@ -74,6 +211,10 @@
                 <button type="submit" class="btn">Register</button>
                 <div class="login-register">
                     <p>Already have an acoount? <a class="login-link" href="#">Login</a></p>
+                </div>
+                <div class="footer">
+                    <h3>Service Provider</h3>
+                    <h3>Service Provider</h3>
                 </div>
             </form>
         </div>
