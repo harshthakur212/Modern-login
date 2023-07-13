@@ -308,7 +308,7 @@ function selectOption() {
     selected_option.innerHTML = '';
     selected_option.append(icon, phone_code);
 
-    input_box.value = phone_code.innerText;
+    // input_box.value = phone_code.innerText;
 
     select_box.classList.remove('active');
     selected_option.classList.remove('active');
@@ -496,54 +496,56 @@ function disableButton() {
 }
 
 
-// function checkOtpFields() {
-//     var otp1 = document.getElementById("otp-input").value;
-//     var otp2 = document.getElementById("otp-input").value;
-//     var otp3 = document.getElementById("otp-input").value;
-//     var otp4 = document.getElementById("otp-input").value;
-//     var submitButton = document.getElementById("btn-login");
 
-//     if (otp1 !== "" && otp2 !== "" && otp3 !== "" && otp4 !== "") {
-//         submitButton.disabled = false;
-//         button.classList.remove('submitButton');
-//     } else {
-//         submitButton.disabled = true;
-//     }
-// }
 
-const otpFields = document.querySelectorAll('.otp-input');
-const loginButton = document.querySelector('.btn-login');
+function changeText() {
+    const textToChange = document.getElementById('textToChange');
+    textToChange.innerHTML = "OTP has been sent to above mobile number.<br><a id='editLink' href='#'>Edit Mob No</a> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <a id='otpLink' href='#'>Get OTP on Call</a>";
 
-otpFields.forEach(field => {
-    field.addEventListener('input', () => {
-        const filledFields = document.querySelectorAll('.otp-field:not(:empty)');
+    // Change color to blue
+    const editLink = document.getElementById('editLink');
+    const otpLink = document.getElementById('otpLink');
 
-        if (filledFields.length === otpFields.length) {
-            loginButton.disabled = false;
-            // loginButton.style.backgroundColor = '#1e66b4';
-            loginButton.style.cursor = 'not-allowed';
-        } else {
-            loginButton.disabled = true;
-            loginButton.style.backgroundColor = '#7fe4fb';
+    editLink.style.color = '#186a7d';
+    otpLink.style.color = '#186a7d';
+}
 
-            loginButton.style.cursor = 'pointer';
-        }
-    });
+
+
+const otpInputs = document.querySelectorAll('.otp-input');
+otpInputs.forEach(input => {
+    input.addEventListener('input', checkOTPFields);
 });
+function checkOTPFields() {
+    var otp1 = document.getElementById("otp1").value;
+    var otp2 = document.getElementById("otp2").value;
+    var otp3 = document.getElementById("otp3").value;
+    var otp4 = document.getElementById("otp4").value;
 
+    const submitBtn = document.getElementById("submit-btn");
 
-const mobileNumberInput = document.getElementById('mobileNumberInput');
-const submitButton = document.getElementById('btn');
-
-mobileNumberInput.addEventListener('input', function () {
-    const inputValue = mobileNumberInput.value;
-
-    if (inputValue.length === 10) {
-        submitButton.disabled = false;
-        submitButton.style.cursor = 'not-allowed';
+    if (otp1 && otp2 && otp3 && otp4) {
+        submitBtn.classList.add("colorOTP");
     } else {
-        submitButton.disabled = true;
-        submitButton.style.backgroundColor = '#7fe4fb';
-        submitButton.style.cursor = 'pointer';
+        submitBtn.classList.remove("colorOTP");
+    }
+}
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const mobileNumberInput = document.getElementById('mobileNumberInput');
+    const submitButton = document.getElementById('timerStart');
+
+    if (mobileNumberInput !== null && submitButton !== null) {
+        mobileNumberInput.addEventListener('input', function () {
+            const inputValue = mobileNumberInput.value;
+            if (inputValue.length === 10) {
+                submitButton.classList.remove('btn2');
+                submitButton.classList.add('submitOTP');
+            } else {
+                submitButton.disabled = true;
+                submitButton.style.cursor = 'not-allowed';
+            }
+        });
     }
 });
