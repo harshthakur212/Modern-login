@@ -85,7 +85,8 @@
                                 <span class="iconify" data-icon="flag:gb-4x3"></span>
                                 <strong>+91</strong>
                             </div>
-                            <input type="tel" name="tel" placeholder="Phone Number" class="mobileNumberInput">
+                            <input type="tel" name="tel" placeholder="Enter Mobile Number" id="mobileNumberInput"
+                                class="mobileNumberInput">
                         </div>
                         <div class="options">
                             <input type="text" class="search-box" placeholder="Search Country Name">
@@ -98,17 +99,19 @@
                 </div>
                 <div class="checkbox-container">
                     <p id="paragraph1">
-                        <label for="myCheckbox" class="checkbox-label">By requesting OTP, you agree to the <span
-                                style="color: var(--clorev-primary);"><a href="#">Terms of Use</a></span> and <span
-                                style="color: var(--clorev-primary);"><a href="#">Privacy Policy</a></span> of
+                        <label for="myCheckbox" id="textToChange" class="checkbox-label">By requesting OTP, you agree to
+                            the <span style="color: var(--clorev-primary);"><a class="okok" href="#">Terms of
+                                    Use</a></span> and
+                            <span style="color: var(--clorev-primary);"><a class="okok" href="#">Privacy
+                                    Policy</a></span> of
                             CLOREV Laundry</label>
                 </div>
 
 
                 <div class="changeNumber">
                     <p class="p" id="myParagraph">Change Mobile Number</p>
-                    <button onclick="replaceWithCountdown(); toggleText(); toggleText2();disableButton()" type="submit"
-                        id="timerStart" class="btn">Request
+                    <button onclick="replaceWithCountdown(); toggleText(); toggleText2();  changeText()" type="submit"
+                        id="timerStart" class="btn btn2">Request
                         OTP</button>
                 </div>
                 <div class="enterOtp">
@@ -116,14 +119,14 @@
                     <!-- <input class="enterOtp-input" type="password" required placeholder="Enter OTP">
                     <label></label> -->
                     <div class="C">
-                        <input class="otp-input" type="text" maxlength="1" pattern="[0-9]" oninput="moveToNext(this)"
-                            oninput="checkOtpFields()" />
-                        <input class="otp-input" type="text" maxlength="1" pattern="[0-9]" oninput="moveToNext(this)"
-                            oninput="checkOtpFields()" />
-                        <input class="otp-input" type="text" maxlength="1" pattern="[0-9]" oninput="moveToNext(this)"
-                            oninput="checkOtpFields()" />
-                        <input class="otp-input" type="text" maxlength="1" pattern="[0-9]" oninput="moveToNext(this)"
-                            oninput="checkOtpFields()" />
+                        <input class="otp-input " id="otp1" type="text" maxlength="1" pattern="[0-9]"
+                            oninput="moveToNext(this)" oninput="checkOtpFields()" />
+                        <input class="otp-input " id="otp2" type="text" maxlength="1" pattern="[0-9]"
+                            oninput="moveToNext(this)" oninput="checkOtpFields()" />
+                        <input class="otp-input " id="otp3" type="text" maxlength="1" pattern="[0-9]"
+                            oninput="moveToNext(this)" oninput="checkOtpFields()" />
+                        <input class="otp-input " id="otp4" type="text" maxlength="1" pattern="[0-9]"
+                            oninput="moveToNext(this)" oninput="checkOtpFields()" />
                         <button type="submit" id="submit-btn" class="btn-login submitButton">Login</button>
 
                     </div>

@@ -12,7 +12,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url('Screenshot\ \(435\).png');
+    background: url('Screenshot\ \(437\).png');
 
     /* background-color: rgb(108, 221, 238); */
     background-size: cover;
@@ -92,7 +92,7 @@ header {
 .wrapper {
     position: relative;
     width: 440px;
-    height: 540px;
+    height: 550px;
     /* background: transparent; */
     /* background: linear-gradient(rgba(255, 255, 255, 100)); */
 
@@ -247,17 +247,7 @@ header {
     text-decoration: underline;
 }
 
-.btn {
-    width: 45%;
-    height: 45px;
-    background: linear-gradient(rgb(0, 200, 250), #006f8e 90%);
-    border: none;
-    outline: none;
-    border-radius: 6px;
-    color: white;
-    font-size: 1em;
-    font-weight: 500;
-}
+
 
 .login-register {
     display: none;
@@ -299,7 +289,7 @@ header {
     /* background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.9)); */
     /* border-radius: 2rem; */
     /* background: beige; */
-    background: #2596be;
+    background: linear-gradient(to top right, #007da3, #00d0fd);
     z-index: 1;
     padding: 20px;
     margin-bottom: -90px;
@@ -319,7 +309,12 @@ checkbox-label. {
     font-size: 13px;
 }
 
-.checkbox-label a {
+#paragraph1 {
+
+    padding-bottom: 12px;
+}
+
+c .checkbox-label a {
     color: #2596be;
 }
 
@@ -380,18 +375,6 @@ checkbox-label. {
 
 
 
-.btn-login {
-    width: 45%;
-    height: 45px;
-    background-color: #add8e6;
-    border: none;
-    outline: none;
-    margin-left: 32px;
-    border-radius: 6px;
-    color: white;
-    font-size: 1em;
-    font-weight: 500;
-}
 
 
 .text-container {
@@ -404,6 +387,7 @@ checkbox-label. {
     text-align: center;
     right: 70%;
     padding-left: 34%;
+    color: #3a8c9e;
 }
 
 .text-container::before,
@@ -412,7 +396,7 @@ checkbox-label. {
     position: absolute;
     top: 50%;
     width: 50%;
-    border-top: 1px solid black;
+    border-top: 1px solid #3a8c9e;
 }
 
 .text-container::before {
@@ -447,7 +431,7 @@ checkbox-label. {
     top: 40%;
     bottom: 5%;
     left: 50%;
-    border-left: 1px solid black;
+    border-left: 1px solid #3a8c9e;
 }
 
 .vertical-line-container span {
@@ -476,6 +460,7 @@ input[type="tel"] {
     border-radius: 0 .5rem .5rem 0;
     background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));
     height: 50px;
+    font-weight: 400;
 }
 
 .select-box input:focus {
@@ -492,6 +477,7 @@ input[type="tel"] {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 }
 
 .selected-option div {
@@ -680,7 +666,7 @@ input.search-box {
 }
 
 .light-blue {
-    opacity: 0.6;
+    background: linear-gradient(to top right, #7fbed1, #7fe6fd);
     cursor: not-allowed;
 }
 
@@ -689,6 +675,55 @@ input.search-box {
     color: #2596be;
 }
 
-.submitButton {
-    cursor: default;
+
+.okok {
+    color: #2596be;
+}
+
+
+.btn-login {
+    width: 45%;
+    height: 45px;
+    border: none;
+    outline: none;
+    background: linear-gradient(to top right, #7fbed1, #7fe6fd);
+    cursor: not-allowed;
+    margin-left: 32px;
+    border-radius: 6px;
+    color: white;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.colorOTP {
+    background: linear-gradient(to top right, #007da3, #00d0fd);
+    cursor: pointer;
+}
+
+
+
+.btn2 {
+    width: 45%;
+    height: 45px;
+    background: linear-gradient(to top right, #7fbed1, #7fe6fd);
+    border: none;
+    outline: none;
+    cursor: not-allowed;
+    border-radius: 6px;
+    color: white;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.submitOTP {
+    width: 45%;
+    height: 45px;
+    background: linear-gradient(to top right, #007da3, #00d0fd);
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 1em;
+    font-weight: 500;
 }
