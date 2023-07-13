@@ -542,6 +542,8 @@ document.addEventListener('DOMContentLoaded', function () {
             if (inputValue.length === 10) {
                 submitButton.classList.remove('btn2');
                 submitButton.classList.add('submitOTP');
+                submitButton.disabled = false;
+                submitButton.style.cursor = 'pointer';
             } else {
                 submitButton.disabled = true;
                 submitButton.style.cursor = 'not-allowed';
